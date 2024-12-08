@@ -33,7 +33,7 @@ class _AuthenticateBiometricState extends State<AuthenticateBiometric> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'SeedScan',
+              'SoulScribe',
               style: TextStyle(
                 fontSize: 40, // Adjust the font size as needed
                 fontWeight: FontWeight.bold, // Adjust the font weight as needed
@@ -45,7 +45,7 @@ class _AuthenticateBiometricState extends State<AuthenticateBiometric> {
             Container(
               margin: const EdgeInsets.only(bottom: 20),
               child: Image.asset(
-                'assets/images/fingerPrintPerson.gif',
+                'assets/icons/diaryicon.png',
                 width: 300,
                 height: 300,
               ),
