@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:soulscribe/pages/const/colors.dart';
 import 'package:soulscribe/pages/drawer.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -73,9 +72,9 @@ class _AddDiaryState extends State<AddDiary> {
     _goalsController.clear();
   }
 
-  void _cancelDiaryEntry() {
-    Navigator.pop(context as BuildContext); // Close the page and return to the previous one
-  }
+void _cancelDiaryEntry() {
+  Navigator.pop(context as BuildContext);
+}
 
   @override
   Widget build(BuildContext context) {

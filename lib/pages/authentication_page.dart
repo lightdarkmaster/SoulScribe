@@ -82,7 +82,7 @@ class _AuthenticateBiometricState extends State<AuthenticateBiometric> {
               ElevatedButton(
                 onPressed: _authenticate,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 243, 172, 255), // Change button color here
+                  backgroundColor: const Color.fromARGB(255, 250, 157, 255), // Change button color here
                   padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 35),
                 ),
                 child: const Text(
@@ -92,7 +92,7 @@ class _AuthenticateBiometricState extends State<AuthenticateBiometric> {
               ),
             ],
           ),
-        ),
+        ),  
       ),
     );
   }
@@ -106,7 +106,6 @@ class _AuthenticateBiometricState extends State<AuthenticateBiometric> {
           biometricOnly: true,
         ),
       );
-      print("Authenticated : $authenticated");
       if (authenticated) {
         Navigator.pushReplacement(
           // ignore: use_build_context_synchronously

@@ -1,9 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:soulscribe/pages/add_diary.dart';
+import 'package:soulscribe/pages/const/quotes.dart';
 import 'package:soulscribe/pages/homescreen.dart'; // Ensure this import exists
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
+  String getRandomQuote() {
+    final random = Random();
+    return quotes[random.nextInt(quotes.length)];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +59,9 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            // ListTile with borders, spacing, and colors
+            // Home ListTile with icon
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white, // Background color for the ListTile
@@ -62,6 +69,7 @@ class CustomDrawer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0), // Optional rounded corners
                 ),
                 child: ListTile(
+                  leading: const Icon(Icons.home, color: Colors.blue), // Add the home icon
                   title: const Text('Home'),
                   onTap: () {
                     Navigator.pushReplacement(
@@ -74,8 +82,9 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            // Add Diary ListTile with icon
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.lightBlue.shade50, // Background color for the ListTile
@@ -83,6 +92,7 @@ class CustomDrawer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: ListTile(
+                  leading: const Icon(Icons.add_box, color: Colors.green), // Add the add icon
                   title: const Text('Add Diary'),
                   onTap: () {
                     Navigator.pushReplacement(
@@ -95,8 +105,9 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            // Settings ListTile with icon
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.lightGreen.shade50, // Background color for the ListTile
@@ -104,6 +115,7 @@ class CustomDrawer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: ListTile(
+                  leading: const Icon(Icons.settings, color: Colors.orange), // Add the settings icon
                   title: const Text('Settings'),
                   onTap: () {
                     Navigator.pop(context); // Close the drawer
